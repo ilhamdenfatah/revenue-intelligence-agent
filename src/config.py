@@ -1,4 +1,4 @@
-"""Centralized configuration — all params loaded from .env"""
+"""Centralized configuration - all params loaded from .env"""
 from pathlib import Path
 from dotenv import load_dotenv
 import os
