@@ -86,7 +86,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://hooks.slack.com/services/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",
+        "url": "SLACK_WEBHOOK_URL",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
