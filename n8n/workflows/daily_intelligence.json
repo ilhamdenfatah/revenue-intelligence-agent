@@ -12,11 +12,14 @@
           ]
         }
       },
-      "id": "cron-trigger",
+      "id": "48f83ebb-bd9f-4050-9b91-867478fd3d06",
       "name": "Daily 08:00 Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [240, 300]
+      "position": [
+        -656,
+        128
+      ]
     },
     {
       "parameters": {
@@ -39,11 +42,14 @@
           "timeout": 120000
         }
       },
-      "id": "run-pipeline",
+      "id": "5c45e670-3720-4e73-99bf-5b4beb5f7cdb",
       "name": "Run Pipeline",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [460, 300]
+      "position": [
+        -448,
+        128
+      ]
     },
     {
       "parameters": {
@@ -68,16 +74,19 @@
         },
         "options": {}
       },
-      "id": "severity-router",
+      "id": "65541658-b166-4c92-b2eb-7ddb4e02063c",
       "name": "Severity Router",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
-      "position": [680, 300]
+      "position": [
+        -224,
+        128
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $env.SLACK_WEBHOOK_URL }}",
+        "url": "=https://hooks.slack.com/services/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",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -89,11 +98,14 @@
         },
         "options": {}
       },
-      "id": "slack-critical",
+      "id": "916e1260-1266-4a0e-a30c-38e67f115a6b",
       "name": "Slack - CRITICAL",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [900, 180]
+      "position": [
+        0,
+        0
+      ]
     },
     {
       "parameters": {
@@ -110,24 +122,14 @@
         },
         "options": {}
       },
-      "id": "slack-warning",
+      "id": "83bbc846-a49f-4bf3-92e5-d9e0681fed37",
       "name": "Slack - WARNING",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [900, 420]
-    },
-    {
-      "parameters": {
-        "operation": "write",
-        "fileName": "=logs/n8n_run_{{ $now.format('yyyyMMdd_HHmmss') }}.json",
-        "dataPropertyName": "data",
-        "options": {}
-      },
-      "id": "log-run",
-      "name": "Log Run",
-      "type": "n8n-nodes-base.writeBinaryFile",
-      "typeVersion": 1,
-      "position": [1120, 300]
+      "position": [
+        0,
+        240
+      ]
     },
     {
       "parameters": {
@@ -144,13 +146,17 @@
         },
         "options": {}
       },
-      "id": "error-handler",
+      "id": "4c125eda-d608-4cc1-9ea0-ef0f37f7bc89",
       "name": "Error Handler - Slack Alert",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [680, 520]
+      "position": [
+        -224,
+        352
+      ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily 08:00 Trigger": {
       "main": [
@@ -194,36 +200,25 @@
     },
     "Slack - CRITICAL": {
       "main": [
-        [
-          {
-            "node": "Log Run",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Slack - WARNING": {
       "main": [
-        [
-          {
-            "node": "Log Run",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     }
   },
+  "active": false,
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
-    "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": ""
+    "binaryMode": "separate",
+    "availableInMCP": false
   },
-  "staticData": null,
+  "versionId": "1ab703fb-7955-44e0-bbaf-5b8a97825615",
   "meta": {
-    "templateCredsSetupCompleted": true
+    "instanceId": "f1b59fa55484a079a2f5f751b37691dd8d6f1619ad439fc58e18b07ed01ab769"
   },
-  "pinData": {}
+  "id": "DOShUpNCNNtx1OaL",
+  "tags": []
 }
