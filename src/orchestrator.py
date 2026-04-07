@@ -16,6 +16,8 @@ from src.context_builder import build_agent_context
 from src.data_ingestion import build_orders_master, load_olist_tables, load_processed, save_processed
 from src.kpi_engine import compute_all_kpis
 from src.agents import action_recommender, report_generator, root_cause_analyzer, signal_detector
+from src.delivery.slack_sender import send_report as slack_send
+from src.delivery.email_sender import send_report as email_send
 
 logging.basicConfig(
     level=logging.INFO,
@@ -135,6 +137,22 @@ def run_pipeline(
             f"signals={len(signals.get('signals', []))} | "
             f"actions={len(actions.get('recommendations', []))}"
         )
+
+        # -----------------------------------------------------------------
+        # Stage 9: Delivery
+        # -----------------------------------------------------------------
+        logger.info("Stage 9/9: Delivering reports")
+        severity = report.get("severity", "ROUTINE")
+
+        if severity in ["CRITICAL", "WARNING"]:
+            slack_send(report, anomalies)
+
+        email_send(report, anomalies)
+
+        result["delivery"] = {
+            "slack": severity in ["CRITICAL", "WARNING"],
+            "email": True,
+        }
 
     except Exception as e:
         result["status"] = "failed"
