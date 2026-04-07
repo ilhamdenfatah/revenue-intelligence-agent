@@ -19,3 +19,7 @@ plotly==5.22.0
 # Dev
 jupyter==1.0.0
 pytest==8.2.2
+
+# API
+fastapi==0.115.0
+uvicorn==0.30.0
