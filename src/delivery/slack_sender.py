@@ -78,6 +78,20 @@ def send_report(report: dict[str, Any], anomalies: dict[str, Any]) -> bool:
                     },
                     {"type": "divider"},
                     {
+                        "type": "actions",
+                        "elements": [
+                            {
+                                "type": "button",
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Investigate in Dashboard"
+                                },
+                                "url": "http://localhost:8501",
+                                "style": "danger"
+                            }
+                        ]
+                    },
+                    {
                         "type": "context",
                         "elements": [
                             {

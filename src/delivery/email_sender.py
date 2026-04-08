@@ -167,7 +167,10 @@ def _build_html(
     <div style="padding:16px 32px;background:#F9FAFB;border-top:1px solid #E5E7EB">
       <p style="margin:0;color:#9CA3AF;font-size:12px">
         Sent by Revenue Intelligence Agent &nbsp;·&nbsp;
-        Automated report — do not reply
+        <a href="http://localhost:8501" style="color:#7C5CFC;">
+            View Dashboard
+        </a>
+        &nbsp;·&nbsp; Automated report — do not reply
       </p>
     </div>
 
