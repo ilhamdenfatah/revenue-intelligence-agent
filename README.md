@@ -58,9 +58,9 @@ And a full structured report lands in your inbox with root cause analysis and a 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │                    REVENUE INTELLIGENCE AGENT                    │
-├─────────────────────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │   DATA LAYER              PROCESSING LAYER                       │
 │   ─────────               ───────────────                        │
@@ -79,7 +79,7 @@ And a full structured report lands in your inbox with root cause analysis and a 
 │            │                                                     │
 │            ▼                                                     │
 │   Agent 3: Action Recommender                                    │
-│        "Priority 1: Restock SKU-X within 48h"                   │
+│        "Priority 1: Restock SKU-X within 48h"                    │
 │            │                                                     │
 │            ▼                                                     │
 │   Agent 4: Report Generator                                      │
@@ -87,13 +87,13 @@ And a full structured report lands in your inbox with root cause analysis and a 
 │                                                                  │
 │   ORCHESTRATION & DELIVERY                                       │
 │   ──────────────────────────────────────                         │
-│   n8n (cron trigger) ──► FastAPI ──► Python Pipeline            │
+│   n8n (cron trigger) ──► FastAPI ──► Python Pipeline             │
 │                                           │                      │
 │                              ┌────────────┼────────────┐         │
 │                              ▼            ▼            ▼         │
 │                           Slack        Email      Streamlit      │
 │                          #alerts      Inbox      Dashboard       │
-└─────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ---
