@@ -11,7 +11,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-**[Live Demo](https://revenue-agent.streamlit.app)** · **[Architecture](#architecture)** · **[Quick Start](#quick-start)**
+**[▶ Watch Demo](https://youtu.be/9czGOasRmsc)** · **[Live Demo](https://revenue-agent.streamlit.app)** · **[Architecture](#architecture)** · **[Quick Start](#quick-start)**
 
 </div>
 
@@ -22,6 +22,8 @@
 Every e-commerce business has the same problem: revenue data is fragmented across categories, geographies, and time periods. When something goes wrong, leadership asks *"what happened and what should we do?"* — and it takes an analyst 2-3 days to compile the answer.
 
 This system answers that question in under 60 seconds, automatically, every single day.
+
+**▶ [Watch the full demo on YouTube](https://youtu.be/9czGOasRmsc)**
 
 ---
 
